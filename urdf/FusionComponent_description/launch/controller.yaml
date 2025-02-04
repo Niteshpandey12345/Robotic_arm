@@ -1,0 +1,39 @@
+FusionComponent_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  top_base_rotator_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: top_base_rotator_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  shoulder_motor_axel_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: shoulder_motor_axel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  elbow_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: elbow_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  wrist_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: wrist_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  palm_motor_gear_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: palm_motor_gear_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  left_finger_bottom_gear_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: left_finger_bottom_gear_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  right_finger_bottom_gear_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: right_finger_bottom_gear_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  left_finger_top_gear_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: left_finger_top_gear_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}

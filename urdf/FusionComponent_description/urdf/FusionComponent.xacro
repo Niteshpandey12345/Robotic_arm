@@ -1,0 +1,556 @@
+<?xml version="1.0" ?>
+<robot name="FusionComponent" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find FusionComponent_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find FusionComponent_description)/urdf/FusionComponent.trans" />
+<xacro:include filename="$(find FusionComponent_description)/urdf/FusionComponent.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0002627923567015669 2.5914624485085075e-17 0.01494497720380998" rpy="0 0 0"/>
+    <mass value="2.755020977836889"/>
+    <inertia ixx="0.006659" iyy="0.00667" izz="0.011804" ixy="0.0" iyz="-0.0" ixz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="base_motor_1">
+  <inertial>
+    <origin xyz="2.1099378127101763e-14 8.342972766746446e-18 0.017817002881844388" rpy="0 0 0"/>
+    <mass value="4.278770654372955"/>
+    <inertia ixx="0.005653" iyy="0.005653" izz="0.010365" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/base_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/base_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_base_rotator_1">
+  <inertial>
+    <origin xyz="-8.89239995512236e-15 1.233342573525986e-17 0.0005047833356153636" rpy="0 0 0"/>
+    <mass value="1.4471918755926776"/>
+    <inertia ixx="0.002148" iyy="0.002148" izz="0.004265" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.065" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/top_base_rotator_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.065" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/top_base_rotator_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_base_rotator_1">
+  <inertial>
+    <origin xyz="0.004167289343908664 -1.646938891723545e-07 0.01738008984968477" rpy="0 0 0"/>
+    <mass value="1.3327073869001724"/>
+    <inertia ixx="0.001072" iyy="0.002557" izz="0.002882" ixy="-0.0" iyz="0.0" ixz="-0.00013"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.0 -0.071" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/hand_base_rotator_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.0 -0.071" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/hand_base_rotator_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_motor_1">
+  <inertial>
+    <origin xyz="-0.014796620520600927 -9.619743949770133e-16 0.015000000000000027" rpy="0 0 0"/>
+    <mass value="0.4151541373103438"/>
+    <inertia ixx="0.000155" iyy="6.1e-05" izz="0.000154" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0475 -0.0 -0.096" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/shoulder_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0475 -0.0 -0.096" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/shoulder_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_motor_axel_1">
+  <inertial>
+    <origin xyz="0.05677700348432111 1.6219031117106984e-13 2.7755575615628914e-17" rpy="0 0 0"/>
+    <mass value="0.01769462792226326"/>
+    <inertia ixx="0.0" iyy="1.8e-05" izz="1.8e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0575 -0.0 -0.111" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/shoulder_motor_axel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0575 -0.0 -0.111" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/shoulder_motor_axel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_1">
+  <inertial>
+    <origin xyz="-0.037761990101366584 0.023404113233626452 0.06425680378421765" rpy="0 0 0"/>
+    <mass value="3.0233564641488204"/>
+    <inertia ixx="0.009655" iyy="0.010195" izz="0.003428" ixy="3.4e-05" iyz="-0.002827" ixz="9.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0375 -0.0 -0.111" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0375 -0.0 -0.111" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_motor_1">
+  <inertial>
+    <origin xyz="0.002817746786057923 -3.458954375978873e-07 4.573828299436755e-07" rpy="0 0 0"/>
+    <mass value="0.11057441596987796"/>
+    <inertia ixx="1.5e-05" iyy="3.6e-05" izz="3.2e-05" ixy="-0.0" iyz="-2e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0325 -0.065644 -0.291354" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/elbow_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0325 -0.065644 -0.291354" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/elbow_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_1">
+  <inertial>
+    <origin xyz="-3.186842774909844e-17 -0.08026769593455063 0.02931228483296111" rpy="0 0 0"/>
+    <mass value="1.9602761020990533"/>
+    <inertia ixx="0.009229" iyy="0.001586" izz="0.008272" ixy="0.0" iyz="0.00278" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.065644 -0.291354" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/elbow_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.065644 -0.291354" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/elbow_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_motor_1">
+  <inertial>
+    <origin xyz="1.02763260686367e-05 -2.4618594599012944e-07 -8.266686030156123e-08" rpy="0 0 0"/>
+    <mass value="0.06394167395834383"/>
+    <inertia ixx="2e-06" iyy="1.2e-05" izz="1.2e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.121543 -0.359485" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/wrist_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.121543 -0.359485" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/wrist_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_1">
+  <inertial>
+    <origin xyz="-0.027457354413848726 -0.03110054685056947 -0.007400943537732962" rpy="0 0 0"/>
+    <mass value="0.23483281660747538"/>
+    <inertia ixx="0.000231" iyy="0.000107" izz="0.000291" ixy="-0.0" iyz="3.5e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0275 0.121543 -0.359485" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/wrist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0275 0.121543 -0.359485" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/wrist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="palm_motor_1">
+  <inertial>
+    <origin xyz="1.826033312537553e-15 0.00507097080317323 0.013930869917469224" rpy="0 0 0"/>
+    <mass value="0.4404700916877822"/>
+    <inertia ixx="0.000139" iyy="8.5e-05" izz="0.00014" ixy="0.0" iyz="2.3e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.175617 -0.35711" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/palm_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.175617 -0.35711" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/palm_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="palm_motor_gear_1">
+  <inertial>
+    <origin xyz="-4.259462957023714e-05 0.0008109731211291826 0.0023653669883929584" rpy="0 0 0"/>
+    <mass value="0.00866182061207498"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.182457 -0.338316" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/palm_motor_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.182457 -0.338316" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/palm_motor_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_finger_bottom_gear_1">
+  <inertial>
+    <origin xyz="-4.4721728088877553e-05 0.0008136000135096078 0.002364258405125108" rpy="0 0 0"/>
+    <mass value="0.008661818381366324"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.006317 0.16669 -0.332043" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_bottom_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.006317 0.16669 -0.332043" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_bottom_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_finger_bottom_gear_1">
+  <inertial>
+    <origin xyz="-5.064487783260942e-05 0.0008184765904432623 0.002362613257196833" rpy="0 0 0"/>
+    <mass value="0.008662439026421578"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.011683 0.164295 -0.33862" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/right_finger_bottom_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.011683 0.164295 -0.33862" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/right_finger_bottom_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_finger_top_gear_1">
+  <inertial>
+    <origin xyz="-4.479059113253903e-05 0.0008123912802939781 0.0023647996557659146" rpy="0 0 0"/>
+    <mass value="0.008662555217009283"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.006317 0.164295 -0.33862" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_top_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.006317 0.164295 -0.33862" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_top_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_finger_1">
+  <inertial>
+    <origin xyz="0.009906058571550292 -0.05856961975045902 0.02823125529581383" rpy="0 0 0"/>
+    <mass value="0.08984932846007516"/>
+    <inertia ixx="0.000128" iyy="4e-05" izz="0.000115" ixy="-1.5e-05" iyz="4.6e-05" ixz="1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.006317 0.162585 -0.343319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.006317 0.162585 -0.343319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_finger_1">
+  <inertial>
+    <origin xyz="-0.00747474095874103 -0.059555240538888304 0.028419287174806906" rpy="0 0 0"/>
+    <mass value="0.0931576119298089"/>
+    <inertia ixx="0.000131" iyy="4.5e-05" izz="0.000123" ixy="2.1e-05" iyz="4.7e-05" ixz="-1.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.011683 0.162585 -0.343319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/right_finger_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.011683 0.162585 -0.343319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/right_finger_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_finger_gear_axel_1">
+  <inertial>
+    <origin xyz="-2.5024189561489996e-07 -0.002308966524115219 -0.006343680017547371" rpy="0 0 0"/>
+    <mass value="0.002081122528065531"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.011683 0.159677 -0.351308" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/right_finger_gear_axel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.011683 0.159677 -0.351308" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/right_finger_gear_axel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_finger_gear_axel_1">
+  <inertial>
+    <origin xyz="-2.5024174616933986e-07 -0.0035659144225341777 -0.009796993433354495" rpy="0 0 0"/>
+    <mass value="0.003295701517901636"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.006317 0.159677 -0.351308" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_gear_axel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.006317 0.159677 -0.351308" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://FusionComponent_description/meshes/left_finger_gear_axel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_motor_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.01" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="base_motor_1"/>
+</joint>
+
+<joint name="top_base_rotator_joint" type="continuous">
+  <origin xyz="0.0 0.0 0.055" rpy="0 0 0"/>
+  <parent link="base_motor_1"/>
+  <child link="top_base_rotator_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="hand_base_rotator_joint" type="fixed">
+  <origin xyz="-0.0 0.0 0.006" rpy="0 0 0"/>
+  <parent link="top_base_rotator_1"/>
+  <child link="hand_base_rotator_1"/>
+</joint>
+
+<joint name="shoulder_motor_joint" type="fixed">
+  <origin xyz="-0.0475 0.0 0.025" rpy="0 0 0"/>
+  <parent link="hand_base_rotator_1"/>
+  <child link="shoulder_motor_1"/>
+</joint>
+
+<joint name="shoulder_motor_axel_joint" type="revolute">
+  <origin xyz="-0.01 0.0 0.015" rpy="0 0 0"/>
+  <parent link="shoulder_motor_1"/>
+  <child link="shoulder_motor_axel_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="1.919862" lower="-1.22173" effort="100" velocity="100"/>
+</joint>
+
+<joint name="shoulder_joint" type="fixed">
+  <origin xyz="0.095 0.0 0.0" rpy="0 0 0"/>
+  <parent link="shoulder_motor_axel_1"/>
+  <child link="shoulder_1"/>
+</joint>
+
+<joint name="elbow_motor_joint" type="fixed">
+  <origin xyz="-0.005 0.065644 0.180354" rpy="0 0 0"/>
+  <parent link="shoulder_1"/>
+  <child link="elbow_motor_1"/>
+</joint>
+
+<joint name="elbow_joint" type="revolute">
+  <origin xyz="-0.0325 0.0 0.0" rpy="0 0 0"/>
+  <parent link="elbow_motor_1"/>
+  <child link="elbow_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit upper="3.490659" lower="-0.523599" effort="100" velocity="100"/>
+</joint>
+
+<joint name="wrist_motor_joint" type="fixed">
+  <origin xyz="0.0 -0.187187 0.068131" rpy="0 0 0"/>
+  <parent link="elbow_1"/>
+  <child link="wrist_motor_1"/>
+</joint>
+
+<joint name="wrist_joint" type="revolute">
+  <origin xyz="0.0275 0.0 0.0" rpy="0 0 0"/>
+  <parent link="wrist_motor_1"/>
+  <child link="wrist_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.174533" lower="-0.174533" effort="100" velocity="100"/>
+</joint>
+
+<joint name="palm_motor_joint" type="fixed">
+  <origin xyz="-0.0275 -0.054074 -0.002375" rpy="0 0 0"/>
+  <parent link="wrist_1"/>
+  <child link="palm_motor_1"/>
+</joint>
+
+<joint name="palm_motor_gear_joint" type="revolute">
+  <origin xyz="0.0 -0.00684 -0.018794" rpy="0 0 0"/>
+  <parent link="palm_motor_1"/>
+  <child link="palm_motor_gear_1"/>
+  <axis xyz="0.0 -0.342031 -0.939689"/>
+  <limit upper="2.792527" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="left_finger_bottom_gear_joint" type="revolute">
+  <origin xyz="0.0 -0.007013 -0.019265" rpy="0 0 0"/>
+  <parent link="left_finger_gear_axel_1"/>
+  <child link="left_finger_bottom_gear_1"/>
+  <axis xyz="0.0 -0.342031 -0.939689"/>
+  <limit upper="2.792527" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="right_finger_bottom_gear_joint" type="revolute">
+  <origin xyz="0.0 -0.004618 -0.012688" rpy="0 0 0"/>
+  <parent link="right_finger_gear_axel_1"/>
+  <child link="right_finger_bottom_gear_1"/>
+  <axis xyz="-0.0 -0.342031 -0.939689"/>
+  <limit upper="2.792527" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="left_finger_top_gear_joint" type="revolute">
+  <origin xyz="0.0 -0.004618 -0.012688" rpy="0 0 0"/>
+  <parent link="left_finger_gear_axel_1"/>
+  <child link="left_finger_top_gear_1"/>
+  <axis xyz="-0.0 0.342031 0.939689"/>
+  <limit upper="2.792527" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="left_finger_joint" type="fixed">
+  <origin xyz="0.0 0.00171 0.004699" rpy="0 0 0"/>
+  <parent link="left_finger_top_gear_1"/>
+  <child link="left_finger_1"/>
+</joint>
+
+<joint name="right_finger_joint" type="fixed">
+  <origin xyz="0.0 0.00171 0.004699" rpy="0 0 0"/>
+  <parent link="right_finger_bottom_gear_1"/>
+  <child link="right_finger_1"/>
+</joint>
+
+<joint name="right_finger_gear_axel_joint" type="fixed">
+  <origin xyz="-0.039183 -0.038134 -0.008177" rpy="0 0 0"/>
+  <parent link="wrist_1"/>
+  <child link="right_finger_gear_axel_1"/>
+</joint>
+
+<joint name="left_finger_gear_axel_joint" type="fixed">
+  <origin xyz="-0.021183 -0.038134 -0.008177" rpy="0 0 0"/>
+  <parent link="wrist_1"/>
+  <child link="left_finger_gear_axel_1"/>
+</joint>
+
+</robot>
